@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#0091ea"
+        android:padding="20dp"
+        >
+        <TextView
+            style="@style/HeaderText"
+            android:text="Order Selection"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"
+            />
+        <TextView
+            style="@style/HeaderText"
+            android:text="Select your main course:"
+            />
+        <!--Burger-->
+        <LinearLayout style="@style/WhiteBackgrnd">
+            <ImageView style="@style/Img"
+                android:src="@drawable/burger"
+                android:contentDescription="Burger" />
+            <CheckBox
+                style="@style/Choice"
+                android:id="@+id/C_B"
+                android:text="Burger"
+                android:onClick="MainChoice"
+                />
+        </LinearLayout>
+        <!--Pizza-->
+        <LinearLayout style="@style/WhiteBackgrnd"
+            android:layout_marginTop="10dp"
+            >
+            <ImageView style="@style/Img"
+                android:src="@drawable/pizza"
+                android:contentDescription="Pizza" />
+            <CheckBox
+                style="@style/Choice"
+                android:id="@+id/C_P"
+                android:text="Pizza"
+                android:onClick="MainChoice"
+                />
+
+        </LinearLayout>
+        <TextView
+            style="@style/HeaderText"
+            android:id="@+id/C1"
+            android:text="Select your drink"
+            />
+<!--Water-->
+        <LinearLayout style="@style/WhiteBackgrnd"
+            android:gravity="center">
+            <ImageView style="@style/Img"
+                android:src="@drawable/water"
+                android:contentDescription="Water"
+                />
+            <CheckBox
+                style="@style/Choice"
+                android:id="@+id/C_W"
+                android:text="Water"
+                android:onClick="CheckBoxStatus1"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="end" >
+
+                <ImageButton style="@style/Arrow"
+                    android:src="@drawable/up_arrow"
+                    android:onClick="IncreaseQuantity1"
+                    android:contentDescription="Add water"
+                    />
+                <TextView style="@style/Number"
+                    android:text="0"
+                    android:id="@+id/QuantityUpd1"/>
+
+                <ImageButton style="@style/Arrow"
+                    android:src="@drawable/down_arrow"
+                    android:onClick="DecreaseQuantity1"
+                    android:contentDescription="Remove water"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+<!--Cola-->
+        <LinearLayout style="@style/WhiteBackgrnd"
+            android:gravity="center"
+            android:layout_marginTop="10dp">
+            <ImageView style="@style/Img"
+                android:src="@drawable/cola"
+                android:contentDescription="Cola"
+                />
+            <CheckBox
+                style="@style/Choice"
+                android:id="@+id/C_C"
+                android:text="Cola"
+                android:onClick="CheckBoxStatus2"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:orientation="vertical">
+
+                <ImageButton
+                    style="@style/Arrow"
+                    android:contentDescription="Add cola"
+                    android:onClick="IncreaseQuantity2"
+                    android:src="@drawable/up_arrow" />
+
+                <TextView
+                    android:id="@+id/QuantityUpd2"
+                    style="@style/Number"
+                    android:layout_width="wrap_content"
+                    android:text="0" />
+
+                <ImageButton
+                    style="@style/Arrow"
+                    android:contentDescription="Remove cola"
+                    android:onClick="DecreaseQuantity2"
+                    android:src="@drawable/down_arrow" />
+            </LinearLayout>
+
+        </LinearLayout>
+<!--Confirm-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end" >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CONFIRM ORDER"
+            android:textSize="20sp"
+            android:padding="20dp"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:onClick="ConfirmOrder"
+            />
+    </LinearLayout>
+  </LinearLayout>
+
+</ScrollView>
